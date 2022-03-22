@@ -29,7 +29,7 @@ description: >-                        # used by seo meta and the atom feed
   Grayson Clark's portfolio and blog (FaultyPine/PiNE)
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://faultypine.github.io'
+url: ''
 
 github:
   username: FaultyPine             # change to your github username
