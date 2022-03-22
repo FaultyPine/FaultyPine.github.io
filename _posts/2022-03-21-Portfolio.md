@@ -12,7 +12,7 @@ tags: [Portfolio]
 ---
 
 
-Hi there. My name is Grayson. Bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh 
+Hi there. My name is Grayson. Bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh bruh
 
 ![brawlback_logo](brawlback_logo.png){: .right }
 _The brawlback logo_
