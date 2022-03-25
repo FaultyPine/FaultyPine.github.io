@@ -1,18 +1,23 @@
-# hidden files
-.*
-!.git*
-!.editorconfig
-!.nojekyll
-!.travis.yml
-*.lock
-
-# bundler cache
-_site
-vendor
-
-# rubygem
-*.gem
-
-# npm dependencies
+.DS_Store
 node_modules
-package-lock.json
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
