@@ -1,0 +1,17 @@
+name: 'Automatic build'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  continuous-delivery:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Go
+        run: bash deploy.sh
