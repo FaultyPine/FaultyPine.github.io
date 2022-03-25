@@ -13,5 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Go
+      - name: Setup Node
+        uses: actions/setup-node@master
+        run: npm install
+
+      - name: Deploy
         run: bash deploy.sh
