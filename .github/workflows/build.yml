@@ -1,18 +1,14 @@
-name: 'Automatic build'
-on:
-  push:
-    branches:
-      - main
-
+name: Build Vue
+on: [push]
 jobs:
-  continuous-delivery:
-
+  build_vue:
     runs-on: ubuntu-latest
-
+    name: Build Vue
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-      - name: Installing project dependencies
-      - run: npm install
-      - name: Building the project
-      - run: bash deploy.sh
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.1
+      with:
+        username: 'FaultyPine'
+        reponame: 'FaultyPine.github.io'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
