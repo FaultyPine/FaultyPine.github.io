@@ -1,6 +1,12 @@
 <template>
   <div>
-    <h1>Resume</h1>
+    <h1><u>Resume</u></h1>
+
+    <i>You can find my official resume here.</i>
+    <div style="margin-top:20px; margin-bottom:20px;">
+        <a class="download-link" href="d/Resume.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
+        <div style="clear:both"></div>
+    </div>
 
     <div class="paragraph">
       I'm <strong>Grayson Clark</strong>, a student at Indiana University studying Computer Science.
@@ -13,91 +19,88 @@
       <br />
       <br />Besides coding, I'm passionate about Soccer, Volleyball, and fantasy books.
 
-      <div style="margin-top:20px; margin-bottom:20px;">
-        <a class="download-link" href="d/resume-en.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF 🇬🇧</a>
-        <div style="clear:both"></div>
-      </div>
     </div>
     <div class="photo">
-      <img src="img/resume-photo.png" alt="Photo of Grayson" />
+      <img src="img/resume-photo.jpg" alt="Photo of Me"/>
     </div>
 
     <div style="clear:both"></div>
 
     <div class="full-content">
-      <h2>Work experience</h2>
+      <h2><u>Work experience</u></h2>
 
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2018-2019</h4>
+    <div>
+      <h3>Summer Camp Counselor</h3>
+      <h4>2016-2020</h4>
 
-      <div>It's classified so I can't speak about it.</div>
+      <div>I worked as a Camp Counselor for a summer camp for kids K-5th grade. 
+          It taught me how to respond quickly and decisively, and how to think on my feet.
+          I learned great leadership skills from taking care of a group of kids, and created activities and
+          schedules for them throughout each week.
+          I also interacted with parents and talked to them about their kids, which taught me how to convey information
+          effectively and how to deal with demands from a customer.
+      </div>
+      <div class="tech-stack">Teamwork, leadership, creativity, client-provider interactions, quick decision-making</div>
+    </div>
+    
+    <div>
+      <h3>Rollback Netcode Consultant</h3>
+      <h4>2022-Present</h4>
 
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
+      <div>I am currently a consultant for <a href="https://thirdpixelinteractive.com/#0">ThirdPixel Interactive</a> where I provide advice and
+      guidance regarding videogame networking for their upcoming game <a href="https://store.steampowered.com/app/1739300/Smack_Studio/?utm_source=thirdpixelinteractive.com&utm_medium=link&utm_campaign=work">Smack Studio</a>.
+      </div>
+      <div class="tech-stack">Computer Networking, Teamwork, Version Control, Coordination, Communication</div>
+    </div>
 
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2015-2017</h4>
 
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Even more Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2012-2015</h4>
-
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h2>Skills</h2>
+      <h2><u>Skills</u></h2>
 
       <div class="skill-set">
-        <h3>Lethal</h3>
-        <SkillRate name="Handguns" :rate="5" />
-        <SkillRate name="Rifles" :rate="5" />
-        <SkillRate name="Shotguns" :rate="5" />
-        <SkillRate name="Machineguns" :rate="5" />
-        <SkillRate name="Missile launchers" :rate="5" />
-        <SkillRate name="Knives" :rate="5" />
-        <SkillRate name="Hand to hand combat" :rate="5" />
+        <h3>Programming Languages</h3>
+        <SkillRate name="C++" :rate="5" />
+        <SkillRate name="Python" :rate="5" />
+        <SkillRate name="C" :rate="4" />
+        <SkillRate name="Java" :rate="4" />
+        <SkillRate name="Rust" :rate="4" />
+        <SkillRate name="C#" :rate="3" />
+        <SkillRate name="JavaScript" :rate="3" />
+        <SkillRate name="HTML" :rate="3" />
+        <SkillRate name="CSS" :rate="2" />
+        <SkillRate name="Shell Scripting" :rate="2" />
+        <SkillRate name="Batch Scripting" :rate="2" />
       </div>
 
       <div class="skill-set">
-        <h3>Non-lethal</h3>
-        <SkillRate name="Sneaking" :rate="1" />
-        <SkillRate name="Negotiation" :rate="1" />
-        <SkillRate name="Seduction" :rate="1" />
-        <SkillRate name="Sense of humor" :rate="2" />
+        <h3>Tools</h3>
+        <SkillRate name="Git" :rate="4" />
+        <SkillRate name="Trello" :rate="5" />
+        <SkillRate name="VSCode" :rate="5" />
+        <SkillRate name="Unix/Command Line" :rate="4" />
+        <SkillRate name="GDB" :rate="3" />
+        <SkillRate name="Github Actions" :rate="3" />
       </div>
       <div style="clear:both" />
 
-      <h2>Education</h2>
+      <h2><u>Education</u></h2>
 
-      <h3>Kindergarten - 1985</h3>
-      <h4>Kindergarten degree</h4>
-      <div>Specialty in bullying and fighting (58 wins, 58 K-O, 0 losses)</div>
+      <h3>High School Diploma: 2016 - 2020</h3>
+      <div>Graduated from Deerfield High School</div>
 
-      <h2>Languages</h2>
-
-      <h3>American</h3>
-      <div>Basic knowledge but I know lots of one-liners</div>
-
-      <h3>That's it</h3>
-      <div>Who needs another language when you speak American?</div>
+      <h3>University: 2020-Present</h3>
+      <div>Currently enrolled at Indiana University Bloomington majoring in Computer Science</div>
 
 
-      <h2>Besides...</h2>
+      <h2><u>Extras</u></h2>
       <div>
-        <h3>I ❤️ Violence</h3>
-        <div>I find it really soothing to just shoot at bad guys</div>
+        <h3>Soccer</h3>
+        <div>Played since I was 7</div>
 
-        <h3>I 🧡 Sports</h3>
-        <div>I used to be thin but then I ingested 10 kilos of steroids and proteins a day while doing 1000 push-ups.</div>
+        <h3>Volleyball</h3>
+        <div>Honarary libero/defender</div>
 
-        <h3>I 💛 Politics</h3>
-        <div>I hope I can have a career here someday but I might have temper issues.</div>
-
-        <h3>I 💚 Flowers</h3>
-        <div>Especially the big ones, with the trunk and leaves.</div>
+        <h3>Reading</h3>
+        <div>Love me some fantasy. Currently reading the Kingkiller Chronicles.</div>
 
       </div>
     </div>
@@ -158,7 +161,7 @@ h4 {
 }
 
 .photo img {
-  height: 300px;
+  height: 400px;
   width: 300px;
 }
 
