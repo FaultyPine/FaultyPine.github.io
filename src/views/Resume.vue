@@ -94,13 +94,13 @@
       <h2><u>Extras</u></h2>
       <div>
         <h3>Soccer</h3>
-        <div>Played since I was 7</div>
+        <div>Played since I was 7. Midfielder</div>
 
         <h3>Volleyball</h3>
         <div>Honarary libero/defender</div>
 
         <h3>Reading</h3>
-        <div>Love me some fantasy. Currently reading the Kingkiller Chronicles.</div>
+        <div>Love me some fantasy books. Currently reading the Kingkiller Chronicles.</div>
 
       </div>
     </div>
