@@ -6,6 +6,7 @@
     <div style="margin-top:20px; margin-bottom:20px;">
         <a class="download-link" href="d/Resume.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
         <div style="clear:both"></div>
+        <iframe src="d/Resume.pdf" frameborder="0" height="900" width="100%"></iframe>
     </div>
 
     <div class="paragraph">
@@ -54,70 +55,10 @@
     </div>
 
 
-      <h2><u>Skills</u></h2>
-
-      <div class="skill-set">
-        <h3>Programming Languages</h3>
-        <SkillRate name="C++" :rate="5" />
-        <SkillRate name="Python" :rate="5" />
-        <SkillRate name="C" :rate="4" />
-        <SkillRate name="Java" :rate="4" />
-        <SkillRate name="Rust" :rate="4" />
-        <SkillRate name="C#" :rate="3" />
-        <SkillRate name="JavaScript" :rate="3" />
-        <SkillRate name="HTML" :rate="3" />
-        <SkillRate name="CSS" :rate="2" />
-        <SkillRate name="Shell Scripting" :rate="2" />
-        <SkillRate name="Batch Scripting" :rate="2" />
-      </div>
-
-      <div class="skill-set">
-        <h3>Tools</h3>
-        <SkillRate name="Git" :rate="4" />
-        <SkillRate name="Trello" :rate="5" />
-        <SkillRate name="VSCode" :rate="5" />
-        <SkillRate name="Unix/Command Line" :rate="4" />
-        <SkillRate name="GDB" :rate="3" />
-        <SkillRate name="Github Actions" :rate="3" />
-      </div>
-      <div style="clear:both" />
-
-      <h2><u>Education</u></h2>
-
-      <h3>High School Diploma: 2016 - 2020</h3>
-      <div>Graduated from Deerfield High School</div>
-
-      <h3>University: 2020-Present</h3>
-      <div>Currently enrolled at Indiana University Bloomington majoring in Computer Science</div>
-
-
-      <h2><u>Extras</u></h2>
-      <div>
-        <h3>Soccer</h3>
-        <div>Played since I was 7. Midfielder</div>
-
-        <h3>Volleyball</h3>
-        <div>Honarary libero/defender</div>
-
-        <h3>Reading</h3>
-        <div>Love me some fantasy books. Currently reading the Kingkiller Chronicles.</div>
-
-      </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import SkillRate from "@/components/SkillRate.vue";
-
-export default Vue.extend({
-  name: "Resume",
-  components: {
-    SkillRate,
-  },
-});
-</script>
 
 <style scoped>
 h2 {
