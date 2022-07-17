@@ -201,4 +201,14 @@ export default [
     `, "#c10606", false, false),
 
     
+    new ProjectData("project-Solary", "Solary", "img/projects/solary.png", `
+    <div class="paragraph">
+        A game built in Unity that accurately simulates a solar system with procedurally generated planets.
+    </div>
+    <div class="paragraph center">
+    <iframe height="167" frameborder="0" src="https://itch.io/embed/1317215" width="552"><a href="https://faultypine.itch.io/solary">Solary by PiNE</a></iframe>
+    </div>
+
+    `, "#5a78af", false, false),
+
 ];
