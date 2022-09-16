@@ -31,8 +31,31 @@
       </div>
 
         
-      <h2><u>Skills</u></h2>
+      <h2><u>Skill Highlights</u></h2>
 
+      <h3>C++</h3>
+      <div class="margin-top: 40px;">
+        <ul>
+            <li>Fighting game (rollback) netcode with clock synchronization and integrated (in-client) matchmaking.</li>  
+            <li>'Launcher' application that provides updates to basic users, and access to dev builds only for contributors/developers.</li> 
+        </ul>
+      </div>
+      <h3>Python</h3>
+      <div class="margin-top: 40px;">
+        <ul>
+            <li><a href="https://github.com/FaultyPine/HeapRegionDiffGenerator">Script</a> that parses binary differences between files and outputs a file that contains the differences between them (special format for use with Brawlback)</li> 
+            <li><a href="https://github.com/FaultyPine/Salty-to-Skyline-ACMD-Porting-Script">Script</a> that takes converts SSBU C++ "ACMD" code and outputs Rust "ACMD" macro code.</li> 
+        </ul> 
+      </div>
+      <h3>Rust</h3>
+      <div class="margin-top: 40px;">
+        <ul>
+            <li>Built multiple <a href="https://github.com/skyline-dev">Skyline</a> plugins that modify code in Super Smash Bros Ultimate (including Twitch integration!).</li> 
+            <li>Transferred the <a href="https://github.com/HDR-Development">HewDraw Remix</a> mod's codebase from C++ to Rust.</li> 
+        </ul>
+      </div>
+
+    <!--
       <div class="skill-set">
         <h3>Programming Languages</h3>
         <SkillRate name="C++" :rate="5" />
@@ -58,6 +81,7 @@
         <SkillRate name="Github Actions" :rate="3" />
       </div>
       <div style="clear:both" />
+      -->
 
       <h2><u>Education</u></h2>
 
@@ -94,12 +118,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SkillRate from "@/components/SkillRate.vue";
+//import SkillRate from "@/components/SkillRate.vue";
 
 export default Vue.extend({
   name: "Resume",
   components: {
-    SkillRate,
+    //SkillRate,
   },
 });
 </script>
