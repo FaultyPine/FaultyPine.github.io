@@ -57,7 +57,7 @@
       <div class="margin-top: 40px;">
         <ul>
             <li>Researched and implemented the Wave Function Collapse algorithm</li> 
-            Watch as it infinitely generates random permutations! <a href="https://github.com/FaultyPine/WaveFunctionCollapseVisualizer">Here is the repository</a>
+            Watch it generate random permutations! <a href="https://github.com/FaultyPine/WaveFunctionCollapseVisualizer">Here is the repository</a>
             <iframe src="WFC/index.html" frameborder="0" height="650" width="650"></iframe>
         </ul> 
       </div>
