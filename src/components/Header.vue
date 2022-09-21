@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="nav-bar">
-      <router-link to="/">About me</router-link>
+      <router-link to="/">Home</router-link>
       <router-link to="/game-projects">Projects</router-link>
       <!--<router-link to="/other-projects">Other Projects</router-link>-->
       <router-link to="/resume">Resume</router-link>

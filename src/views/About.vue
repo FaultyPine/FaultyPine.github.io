@@ -53,6 +53,14 @@
             <li>Built multiple <a href="https://github.com/skyline-dev">Skyline</a> plugins that modify code in Super Smash Bros Ultimate (including Twitch integration!).</li> 
             <li>Transferred the <a href="https://github.com/HDR-Development">HewDraw Remix</a> mod's codebase from C++ to Rust.</li> 
         </ul>
+      <h3>JavaScript</h3>
+      <div class="margin-top: 40px;">
+        <ul>
+            <li>Researched and implemented the Wave Function Collapse algorithm</li> 
+            Watch as it infinitely generates random permutations! <a href="https://github.com/FaultyPine/WaveFunctionCollapseVisualizer">Here is the repository</a>
+            <iframe src="WFC/index.html" frameborder="0" height="650" width="650"></iframe>
+        </ul> 
+      </div>
       </div>
 
     <!--
