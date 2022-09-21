@@ -26,6 +26,8 @@ const baseWFCDimensionSlider = [140, 0];
 // reference to the slider that holds the user's desired grid dimensions
 let dimensionSlider;
 
+// number of times we've restarted to solve this grid
+let numSolveAttemps = 1;
 
 function setup() {
     //randomSeed(99);
@@ -35,7 +37,8 @@ function setup() {
     button.mousePressed(OnRegenGridClicked);
     dimensionSlider = createSlider(2, 30, 15, 1);
     dimensionSlider.position(baseWFCDimensionSlider[0], baseWFCDimensionSlider[1]);
-
+    DIMENSION = dimensionSlider.value();
+    
     let canvas = createCanvas(CANVAS_SIZE, CANVAS_SIZE);
     canvas.position(baseWFCGridPos[0], baseWFCGridPos[1]);
     background(backgroundCol);
@@ -45,6 +48,7 @@ function setup() {
 }
 
 function OnRegenGridClicked() {
+    numSolveAttemps = 1;
     DIMENSION = dimensionSlider.value();
     resetGrid();
 }
@@ -53,6 +57,12 @@ function OnRegenGridClicked() {
 function draw() {
     updateWFC();
     render();
+
+    push();
+    textSize(15);
+    fill(255, 255, 255, 255);
+    text("Number of attempts to solve: " + numSolveAttemps, 0, 10);
+    pop();
 }
 
 function InitBaseTileVariations() {
@@ -176,6 +186,7 @@ function updateWFC() {
         // if we "cant" collapse, either backtrack or start over
         // TODO: is this right?
         console.log("Found contradiction! Need to backtrack or restart...");
+        numSolveAttemps++;
         resetGrid();
         return;
     }
