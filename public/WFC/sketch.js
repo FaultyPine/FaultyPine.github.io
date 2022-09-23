@@ -2,7 +2,7 @@
 // actual screen size of the grid we draw to
 const CANVAS_SIZE = 600;
 // dimension of the grid we solve
-let DIMENSION = 15;
+let DIMENSION = 10;
 // whether our wfc solver is done or not
 let isDone = false;
 
@@ -29,13 +29,96 @@ let dimensionSlider;
 // number of times we've restarted to solve this grid
 let numSolveAttemps = 1;
 
+
+let railBaseTiles;
+let defaultDemoBaseTiles;
+let pipesBaseTiles;
+let trainTracksBaseTiles;
+let mountainsBaseTiles;
+let polkaBaseTiles;
+let circuitBaseTiles;
+
+let allTileVariations;
+let tileVariationSetIndex;
+
+function initializeAllTilesets() {
+    // the TileVariation edges are generic, so you can use anything as the identifier here
+    // if it's a simple tileset like the demo one, 1's and 0's suffice, but if there's
+    // asymmetrical tiles, using more keys like "ABB", "ABA", etc will produce better results
+    // Note: EDGES ARRAY GOES                        UP, RIGHT, DOWN, LEFT
+
+    const railBaseImgPath = "tiles/demo_tiles/rail";
+    railBaseTiles = [
+        // tiles/demo_tiles/rail
+        new TileVariation(`${railBaseImgPath}/tile0.png`, ["AAA", "AAA", "AAA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile1.png`, ["ABA", "ABA", "ABA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile2.png`, ["BAA", "AAB", "AAA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile3.png`, ["BAA", "AAA", "BAA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile4.png`, ["ABA", "ABA", "AAA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile5.png`, ["ABA", "AAA", "ABA", "AAA"]),
+        new TileVariation(`${railBaseImgPath}/tile6.png`, ["ABA", "ABA", "ABA", "ABA"]),
+    ];
+
+    const defaultDemoBaseImgPath = "tiles/demo_tiles/basic_t"
+    defaultDemoBaseTiles = [
+        new TileVariation(`${defaultDemoBaseImgPath}/blank.png`, [0, 0, 0, 0]),
+        new TileVariation(`${defaultDemoBaseImgPath}/down.png`, [0, 1, 1, 1]),
+    ];
+
+    const pipesBaseImgPath = "tiles/demo_tiles/pipes"
+    pipesBaseTiles = [
+        new TileVariation(`${pipesBaseImgPath}/blank.png`, [0, 0, 0, 0]),
+        new TileVariation(`${pipesBaseImgPath}/down.png`, [0, 1, 1, 1]),
+    ];
+
+    const trainTracksBaseImgPath = "tiles/demo_tiles/train-tracks"
+    trainTracksBaseTiles = [
+        new TileVariation(`${trainTracksBaseImgPath}/blank.png`, [0, 0, 0, 0]),
+        new TileVariation(`${trainTracksBaseImgPath}/down.png`, [0, 1, 1, 1]),
+    ];
+
+    const mountainBaseImgPath = "tiles/demo_tiles/mountains"
+    mountainsBaseTiles = [
+        new TileVariation(`${mountainBaseImgPath}/blank.png`, [0, 0, 0, 0]),
+        new TileVariation(`${mountainBaseImgPath}/down.png`, [0, 1, 1, 1]),
+    ];
+
+    const polkaBaseImgPath = "tiles/demo_tiles/polka"
+    polkaBaseTiles = [
+        new TileVariation(`${polkaBaseImgPath}/blank.png`, [0, 0, 0, 0]),
+        new TileVariation(`${polkaBaseImgPath}/down.png`, [0, 1, 1, 1]),
+    ];
+
+    const circuitBaseImgPath = "tiles/demo_tiles/circuit";
+    circuitBaseTiles = [
+        new TileVariation(`${circuitBaseImgPath}/0.png`,  ['AAA', 'AAA', 'AAA', 'AAA']),
+        new TileVariation(`${circuitBaseImgPath}/1.png`,  ['BBB', 'BBB', 'BBB', 'BBB']),
+        new TileVariation(`${circuitBaseImgPath}/2.png`,  ['BBB', 'BCB', 'BBB', 'BBB']),
+        new TileVariation(`${circuitBaseImgPath}/3.png`,  ['BBB', 'BDB', 'BBB', 'BDB']),
+        new TileVariation(`${circuitBaseImgPath}/4.png`,  ['ABB', 'BCB', 'BBA', 'AAA']),
+        new TileVariation(`${circuitBaseImgPath}/5.png`,  ['ABB', 'BBB', 'BBB', 'BBA']),
+        new TileVariation(`${circuitBaseImgPath}/6.png`,  ['BBB', 'BCB', 'BBB', 'BCB']),
+        new TileVariation(`${circuitBaseImgPath}/7.png`,  ['BDB', 'BCB', 'BDB', 'BCB']),
+        new TileVariation(`${circuitBaseImgPath}/8.png`,  ['BDB', 'BBB', 'BCB', 'BBB']),
+        new TileVariation(`${circuitBaseImgPath}/9.png`,  ['BCB', 'BCB', 'BBB', 'BCB']),
+        new TileVariation(`${circuitBaseImgPath}/10.png`, ['BCB', 'BCB', 'BCB', 'BCB']),
+        new TileVariation(`${circuitBaseImgPath}/11.png`, ['BCB', 'BCB', 'BBB', 'BBB']),
+        new TileVariation(`${circuitBaseImgPath}/12.png`, ['BBB', 'BCB', 'BBB', 'BCB']),
+    ];
+
+
+    tileVariationSetIndex = 0;
+    allTileVariations = [defaultDemoBaseTiles, railBaseTiles, pipesBaseTiles, circuitBaseTiles, trainTracksBaseTiles, mountainsBaseTiles, polkaBaseTiles];
+}
+
 function setup() {
+    initializeAllTilesets();
     //randomSeed(99);
 
     let button = createButton('Click to Regenerate');
     button.position(0, 0);
     button.mousePressed(OnRegenGridClicked);
-    dimensionSlider = createSlider(2, 30, 15, 1);
+    dimensionSlider = createSlider(2, 30, 10, 1);
     dimensionSlider.position(baseWFCDimensionSlider[0], baseWFCDimensionSlider[1]);
     DIMENSION = dimensionSlider.value();
     
@@ -43,8 +126,7 @@ function setup() {
     canvas.position(baseWFCGridPos[0], baseWFCGridPos[1]);
     background(backgroundCol);
 
-    initTiles();
-
+    initTiles(allTileVariations[tileVariationSetIndex]);
 }
 
 function OnRegenGridClicked() {
@@ -60,27 +142,23 @@ function draw() {
 
     push();
     textSize(15);
-    fill(255, 255, 255, 255);
-    text("Number of attempts to solve: " + numSolveAttemps, 0, 10);
+    strokeWeight(5);
+    stroke(0, 0, 0, 255); // black outline
+    fill(255, 255, 255, 255); // white text
+    text("Number of attempts to solve: " + numSolveAttemps, 5, 15);
     pop();
 }
 
-function InitBaseTileVariations() {
-    const baseImgPath = "tiles/demo";
-    tileVariations = [
-        //                                          UP, RIGHT, DOWN, LEFT
-        new TileVariation(`${baseImgPath}/blank.png`, [0, 0, 0, 0]),
-        new TileVariation(`${baseImgPath}/down.png`, [0, 1, 1, 1]),
-    ];
-}
 
-function initTiles() {
+
+function initTiles(baseTiles) {
+    tileVariationSetIndex = (tileVariationSetIndex+1) % allTileVariations.length;
     // get tile variations with different images/edges
     // in the future this might be something that gets done through
     // user input
-
+    
     // here, we load the base variations of the tiles based on the images we have
-    InitBaseTileVariations();
+    tileVariations = baseTiles;
 
     // then we also load in the rotated versions of the base images
     const baseVariationsLen = tileVariations.length;
@@ -96,6 +174,7 @@ function initTiles() {
         for (const tile of tiles) {
             const key = tile.edges.join(','); // ex: 'ABB,BCB,BBA,AAA'
             const keyInMap = key in uniqueTilesMap;
+            // this just ensures that we keep tiles whose imgPath is valid over tiles whose imgPath is blank
             const shouldAdd = !keyInMap || keyInMap && uniqueTilesMap[key].imgPath == "" && tile.imgPath != "";
             if (shouldAdd) uniqueTilesMap[key] = tile;
         }
@@ -104,12 +183,17 @@ function initTiles() {
     tileVariations = removeDuplicatedTiles(tileVariations);
 
     // Generate the adjacency rules based on edges
-    for (let i = 0; i < tileVariations.length; i++) {
-        const tileVariation = tileVariations[i];
+    for (let tileVariation of tileVariations) {
         tileVariation.analyze(tileVariations);
     }
 
     resetGrid();
+}
+
+function switchToNextTileset() {
+    resetGrid();
+    initTiles(allTileVariations[tileVariationSetIndex]);
+    numSolveAttemps = 1;
 }
 
 function resetGrid() {
@@ -122,7 +206,7 @@ function resetGrid() {
         // init with x and y index into 'grid'. We need x and y idx in each cell because there are
         // times when we copy and shuffle around Cells in temporary arrays and we need to reference the original
         // indices of that Cell in those cases
-        // Cell's are initialized with ALL possible options (I.E. this Cell could be anything)
+        // Cell's are initialized with ALL possible options (I.E. this Cell could be anything... max entropy)
         grid[i] = new Cell(tileVariations.length, xIdx, yIdx);
     }
 }
@@ -163,6 +247,8 @@ function updateWFC() {
     if (entropySortedGrid.length == 0) {
         isDone = true;
         console.log("Finished!");
+        sleep(1500);
+        switchToNextTileset();
         return;
     }
     // sort copied grid by entropy
@@ -176,6 +262,9 @@ function updateWFC() {
     entropySortedGrid = entropySortedGrid.filter(lowestEntropyFilter);
     // at this point, entropySortedGrid contains cells who has the lowest entropy
     // there may be multiple of these, so lets just pick one at random (if there's one, it'll just choose that one)
+    if (entropySortedGrid.length > 1) {
+        // TODO: if we picked a random tile, save our state for future backtracking
+    }
     const cellToCollapseIdx = int(random(entropySortedGrid.length));
     let cellToCollapse = entropySortedGrid[cellToCollapseIdx];
 
@@ -184,14 +273,13 @@ function updateWFC() {
     // ===== collapse ===== 
     if (!cellToCollapse.Collapse()) {
         // if we "cant" collapse, either backtrack or start over
-        // TODO: is this right?
         console.log("Found contradiction! Need to backtrack or restart...");
         numSolveAttemps++;
         resetGrid();
+        // TODO: backtrack here
         return;
     }
 
-    //console.log("Cell (" + cellToCollapse.xIdx + ", " + cellToCollapse.yIdx + ") collapsed. Using tile idx = " + cellToCollapse.tileVariationIdx);
 
     // ===== propogate ===== 
 
