@@ -12,7 +12,6 @@
     <div class="paragraph">
       I'm <strong>Grayson Clark</strong>, a student at Indiana University studying Computer Science.
       <br />I am pursuing Computer Science / Game Development because there's something really magical about working with computers.
-      <br />Coding is like my way of weilding my magic wand, and the more I learn the more I am fascinated by this technological world.
       <br />I love working with other people and consider myself a great team player, but can also fly solo if need be.
       <br />
       <br />Feel free to 
