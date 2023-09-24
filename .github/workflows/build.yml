@@ -5,11 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Vue
     steps:
-    - run: export NODE_OPTIONS=--openssl-legacy-provider
     - uses: actions/checkout@v2
-    - id: Build-Vue
-      uses: xRealNeon/VuePagesAction@1.0.1
-      with:
-        username: 'FaultyPine'
-        reponame: 'FaultyPine.github.io'
-        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+    - name: Build Vue
+      run: |
+              export NODE_OPTIONS=--openssl-legacy-provider
+              npm ci
+              npm run build
+              cd dist
+              ln -s index.html 404.html
+              if [ "none" !=  ci ]; then echo 'ci' > CNAME; fi
+              git config --global user.email "$CI@example.com"
+              git config --global user.name "FaultyPine"
+              git init
+              git add -A
+              git commit -m 'deploy'
+              git push -f https://FaultyPine:${{ secrets.GITHUB_TOKEN }}@github.com/FaultyPine/FaultyPine.github.io.git master:gh-pages
