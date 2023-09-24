@@ -36,8 +36,10 @@
       <h3>C++</h3>
       <div class="margin-top: 40px;">
         <ul>
-            <li>Fighting game (rollback) netcode with clock synchronization and integrated (in-client) matchmaking.</li>  
-            <li>'Launcher' application that provides updates to basic users, and access to dev builds only for contributors/developers.</li> 
+            <li><a href="https://github.com/FaultyPine/tiny_engine">Tiny Engine</a> - a toy rendering engine backed by OpenGL</li>
+            <li>Fighting game (rollback) netcode with clock synchronization and integrated (in-client) matchmaking. See <a href="https://github.com/FaultyPine/Brawlback">Brawlback asm repo</a> and <a href="https://github.com/FaultyPine/dolphin">the dolphin fork</a>.</li>  
+            <li><a href="https://github.com/FaultyPine/HDR-Installer-Homebrew">HDR-Installer</a> - a Nintendo Switch homebrew application that allows users to install, update, and modify the Hewdraw Remix mod directly from their switch with a simple TUI-esc menu</li>
+            <li><a href="https://github.com/FaultyPine/UltimateModShop">UltimateModShop</a> - a Nintendo Switch homebrew application that allows users to install, update, remove, and browse Smash Ultimate mods from <a href="https://gamebanana.com/games/6498">GameBanana</a> directly on their switch.</li>
         </ul>
       </div>
       <h3>Python</h3>
