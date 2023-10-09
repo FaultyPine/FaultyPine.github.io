@@ -52,7 +52,7 @@
       <h3>Rust</h3>
       <div class="margin-top: 40px;">
         <ul>
-            <li>Built multiple <a href="https://github.com/skyline-dev">Skyline</a> plugins that modify code in Super Smash Bros Ultimate (including Twitch integration!).</li> 
+            <li>Built multiple <a href="https://github.com/skyline-dev">Skyline</a> plugins that modify code in Super Smash Bros Ultimate (including <a href="https://github.com/FaultyPine/SSBU_Twitch_Integration">Twitch integration</a>!).</li> 
             <li>Transferred the <a href="https://github.com/HDR-Development">HewDraw Remix</a> mod's codebase from C++ to Rust.</li> 
         </ul>
       <h3>JavaScript</h3>
