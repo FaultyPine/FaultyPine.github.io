@@ -4,9 +4,9 @@
 
     <i>You can find my official resume here.</i>
     <div style="margin-top:20px; margin-bottom:20px;">
-        <a class="download-link" href="d/Resume.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
+        <a class="download-link" href="d/Grayson_Resume.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF</a>
         <div style="clear:both"></div>
-        <iframe src="d/Resume.pdf" frameborder="0" height="900" width="100%"></iframe>
+        <iframe src="d/Grayson_Resume.pdf" frameborder="0" height="900" width="100%"></iframe>
     </div>
 
   </div>
